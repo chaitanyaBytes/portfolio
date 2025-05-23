@@ -1,1 +1,9 @@
-
+{
+  "semi": true,
+  "trailingComma": "all",
+  "endOfLine": "auto",
+  "bracketSpacing": false,
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
+}
