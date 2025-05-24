@@ -1,4 +1,6 @@
+"use client";
 import {cn} from "@/lib/utils";
+import {motion} from "motion/react";
 import React from "react";
 
 const subheading = ({
@@ -11,14 +13,21 @@ const subheading = ({
   className?: string;
 }) => {
   return (
-    <Tag
-      className={cn(
-        "text-secondary max-w-lg pt-4 text-sm md:text-sm",
-        className,
-      )}
+    <motion.div
+      initial={{opacity: 0, y: 10, filter: "blur(10px)"}}
+      whileInView={{opacity: 1, y: 0, filter: "blur(0px)"}}
+      transition={{duration: 0.3, ease: "easeInOut", delay: 0.2}}
+      viewport={{once: true}}
     >
-      {children}
-    </Tag>
+      <Tag
+        className={cn(
+          "text-secondary max-w-lg pt-4 text-sm md:text-sm",
+          className,
+        )}
+      >
+        {children}
+      </Tag>
+    </motion.div>
   );
 };
 
