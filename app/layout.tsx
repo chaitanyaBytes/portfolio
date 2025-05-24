@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import {ViewTransitions} from "next-view-transitions";
 import Footer from "@/components/navbar/footer";
+import {Toaster} from "sonner";
 
 const inter = Inter({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <body
           className={`${inter.className} bg-neutral-100 antialiased dark:bg-neutral-700`}
         >
+          <Toaster position="top-center" richColors />
           <Navbar />
           {children}
           <Footer />
