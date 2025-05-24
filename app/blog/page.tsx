@@ -3,8 +3,9 @@ import "../globals.css";
 import Container from "@/components/container";
 import {getAllBlogs} from "@/utils/mdx";
 import {Link} from "next-view-transitions";
-import Image from "next/image";
 import {formatDate} from "@/lib/utils";
+import Heading from "@/components/heading";
+import Subheading from "@/components/subheading";
 
 export const metadata: Metadata = {
   title: "All blogs - Chaitanya Gupta",
@@ -27,19 +28,17 @@ export default async function BlogsPage() {
   return (
     <div className="flex min-h-screen flex-col items-start justify-start">
       <Container className="min-h-[200vh] px-10 md:pt-20 md:pb-10">
-        <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
-          All blogs
-        </h1>
-        <p className="text-secondary max-w-lg pt-4 text-sm md:text-sm">
+        <Heading as="h1">All blogs</Heading>
+        <Subheading>
           This is Chaitanya Gupta&apos;s portfolio, A passionate software
           engineer who builds scalable and efficient systems. Loves solana and
           wants to be a polymath
-        </p>
+        </Subheading>
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col py-8">
           {blogs.map((blog) => (
             <Link href={`/blog/${blog.slug}`} key={blog.slug}>
-              <div className="flex flex-col gap-4 py-10">
+              <div className="flex flex-col gap-2 py-4">
                 <div className="flex items-center justify-between">
                   <h2 className="text-primary text-base font-bold tracking-tight">
                     {blog.frontmatter?.title}
@@ -54,15 +53,15 @@ export default async function BlogsPage() {
                     150,
                   )}
                 </p>
-                {blog.frontmatter?.image && (
+                {/* {blog.frontmatter?.image && (
                   <Image
                     src={blog.frontmatter?.image}
                     alt={blog.frontmatter?.title}
                     width={1000}
                     height={1000}
-                    className="rounded-lg"
+                    className="mx-auto max-h-96 w-full max-w-2xl rounded-2xl border border-neutral-200 shadow-2xl"
                   />
-                )}
+                )} */}
               </div>
             </Link>
           ))}
