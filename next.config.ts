@@ -4,6 +4,9 @@ import createMDX from '@next/mdx'
 const nextConfig: NextConfig = {
   /* config options here */
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  images: {
+    domains: ['images.unsplash.com', 'images.pexels.com'],
+  },
 
 };
 
