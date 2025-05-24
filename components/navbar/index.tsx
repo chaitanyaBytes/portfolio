@@ -48,13 +48,15 @@ const Navbar = () => {
         }}
         className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white px-3 py-2 dark:bg-neutral-900"
       >
-        <Image
-          src="/profile.jpg"
-          alt="avatar"
-          width={100}
-          height={100}
-          className="h-10 w-10 rounded-full"
-        />
+        <Link href="/">
+          <Image
+            src="/profile.jpg"
+            alt="avatar"
+            width={100}
+            height={100}
+            className="h-10 w-10 rounded-full"
+          />
+        </Link>
 
         <div className="flex items-center">
           {navItems.map((item, idx) => (
